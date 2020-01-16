@@ -1,6 +1,8 @@
 module Api
   module V1
     class CharactersController < ApplicationController
+      before_action :validate_id
+
       def show
         # Initialize API Fetcher
         fetcher = RickyAndMorty::Fetcher.new
@@ -20,6 +22,16 @@ module Api
         render plain: result
       rescue RickyAndMorty::ApiError => e
         render json: { status: 'error', message: e.message }, status: e.status
+      end
+
+      private
+  
+      # If we need to validate body, is it better to use https://github.com/ruby-json-schema/json-schema
+      def validate_id
+        # Accept only number as id
+        return if Integer(params[:id]) rescue nil?
+  
+        render json: { status: 'error', message: 'invalid id' }, status: :unprocessable_entity
       end
     end
   end
