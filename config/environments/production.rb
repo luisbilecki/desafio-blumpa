@@ -96,4 +96,8 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # Redis cache
+  # TODO: For production see https://guides.rubyonrails.org/caching_with_rails.html to confiugure
+  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
 end
