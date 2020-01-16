@@ -25,6 +25,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # RSpec testing framework
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  # Library for stubbing and setting expectations on HTTP requests in Ruby.
+  gem 'webmock', '~> 2.1'
 end
 
 group :development do
