@@ -17,7 +17,7 @@ module Api
           episode_data[:air_date]
         end
 
-        render json: result
+        render plain: result
       rescue RickyAndMorty::ApiError => e
         render json: { status: 'error', message: e.message }, status: e.status
       end
