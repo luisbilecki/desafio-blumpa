@@ -12,6 +12,8 @@ module Api
         episode_data = fetcher.fetch_episode(character_data[:first_episode])
 
         render json: { status: 'success', air_date: episode_data[:air_date] }
+      rescue RickyAndMorty::ApiError => e
+        render json: { status: 'error', message: e.message }, status: e.status
       end
     end
   end
