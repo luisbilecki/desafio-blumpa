@@ -1,5 +1,7 @@
 # Desafio Blumpa
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0a34d26bfa72bbf1eb07)
+
 Desafio técnico para a vaga de backend na Blumpa.
 
 ## Requisitos
@@ -104,7 +106,7 @@ bundle install
 
 Os _endpoints_ desta API estão documentados abaixo.
 
-#### Obter data de estréia do personagem no seriado
+#### Obter data de estreia do personagem no seriado
 
 **URL**
 
@@ -125,7 +127,7 @@ Nenhum
 **Respostas**
 
 Código: 200
-Conteúdo de retorno: Data de estréia do personagem (plain text)
+Conteúdo de retorno: Data de estreia do personagem (plain text)
 
 Código: 404 Não encontrado
 Motivo: Não existe tal código.
