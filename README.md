@@ -23,14 +23,20 @@ REDIS_URL=redis://redis:6379/1
 2. Inicialize o _compose_ usando:
 
 ```bash
+  docker-compose up --build
+```
+
+3. Nas próximas execuções somente é necessário rodar:
+
+```bash
   docker-compose up
 ```
 
 Obs.: No primeiro uso é normal demorar, pois é feito o download das imagens (ruby 2.6.3 e redis) e o container é configurado.
 
-3. Para parar a execução da API, pressione CTRL+C ou CTRL+D.
+4. Para parar a execução da API, pressione CTRL+C ou CTRL+D.
 
-4. Para rodar os testes use:
+5. Para rodar os testes use:
 
 ```bash
   docker-compose run --rm blumpa-api bundle exec rspec
